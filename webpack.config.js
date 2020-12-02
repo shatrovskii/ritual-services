@@ -1,34 +1,25 @@
 const path = require("path");
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
-
   entry: {
-    main: "./src/main.ts",
-    sidebar: "./src/sidebar.tsx", // Example! It works with React.
-    modal: "./src/modal.ts"
+    index: "./src/index.ts",
+    sidebar: "./src/sidebar.tsx"
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
         use: [
           {
             loader: "ts-loader",
             options: {
-              // TODO: why the fuck i need this config? How about tsconfig.json?
-              transpileOnly: true,
-              compilerOptions: {
-                target: "ES5",
-                module: "esnext",
-                jsx: "react",
-                sourceMap: true,
-                esModuleInterop: true // TODO: remove esModuleInterop + move to lodash-es?
-              }
+              transpileOnly: true
             }
           }
         ],
-        exclude: /node_modules/
       },
       {
         test: /\.less$/,
@@ -37,13 +28,22 @@ module.exports = {
             loader: "style-loader"
           },
           {
-            loader: "css-loader"
+            loader: "css-loader",
+            options: {
+              import: true,
+            }
           },
           {
             loader: "less-loader"
           }
         ],
-        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
       }
     ]
   },
@@ -53,5 +53,17 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
-  }
+  },
+  // devServer: {
+  //   contentBase: path.join(__dirname, 'dist'),
+  //   hot: true,
+  //   port: 8081
+  // }
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     template: 'index.html',
+  //     chunks : ['index'],
+  //     inject: false
+  //   })
+  // ]
 };
