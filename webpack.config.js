@@ -1,5 +1,6 @@
 const path = require("path");
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -25,7 +26,7 @@ module.exports = {
         test: /\.less$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader',
           },
           {
             loader: "css-loader",
@@ -59,11 +60,14 @@ module.exports = {
   //   hot: true,
   //   port: 8081
   // }
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     template: 'index.html',
-  //     chunks : ['index'],
-  //     inject: false
-  //   })
-  // ]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      chunks : ['index'],
+      inject: false
+    }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'styles.css',
+    // }),
+  ]
 };
