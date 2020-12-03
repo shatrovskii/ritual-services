@@ -63,12 +63,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      // chunks : ['index'],
+      chunks : ['index'],
       // inject: true
     }),
     new HtmlWebpackPlugin({
       filename: 'sidebar.html',
       template: 'sidebar.html',
+      chunks : ['sidebar'],
     })
   ]
 };
