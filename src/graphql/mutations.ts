@@ -2,6 +2,918 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createRetroBoard = /* GraphQL */ `
+  mutation CreateRetroBoard(
+    $input: CreateRetroBoardInput!
+    $condition: ModelRetroBoardConditionInput
+  ) {
+    createRetroBoard(input: $input, condition: $condition) {
+      id
+      boardKey
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      activeRitual {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+    }
+  }
+`;
+export const updateRetroBoard = /* GraphQL */ `
+  mutation UpdateRetroBoard(
+    $input: UpdateRetroBoardInput!
+    $condition: ModelRetroBoardConditionInput
+  ) {
+    updateRetroBoard(input: $input, condition: $condition) {
+      id
+      boardKey
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      activeRitual {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+    }
+  }
+`;
+export const deleteRetroBoard = /* GraphQL */ `
+  mutation DeleteRetroBoard(
+    $input: DeleteRetroBoardInput!
+    $condition: ModelRetroBoardConditionInput
+  ) {
+    deleteRetroBoard(input: $input, condition: $condition) {
+      id
+      boardKey
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      activeRitual {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+    }
+  }
+`;
+export const createRitual = /* GraphQL */ `
+  mutation CreateRitual(
+    $input: CreateRitualInput!
+    $condition: ModelRitualConditionInput
+  ) {
+    createRitual(input: $input, condition: $condition) {
+      id
+      stage
+      name
+      date
+      timeFrame
+      groupSize
+      frameId
+      templateId
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      actionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      participantPreferences {
+        items {
+          id
+          difficulty
+          mood
+          surpriseMe
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      persons {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const updateRitual = /* GraphQL */ `
+  mutation UpdateRitual(
+    $input: UpdateRitualInput!
+    $condition: ModelRitualConditionInput
+  ) {
+    updateRitual(input: $input, condition: $condition) {
+      id
+      stage
+      name
+      date
+      timeFrame
+      groupSize
+      frameId
+      templateId
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      actionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      participantPreferences {
+        items {
+          id
+          difficulty
+          mood
+          surpriseMe
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      persons {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const deleteRitual = /* GraphQL */ `
+  mutation DeleteRitual(
+    $input: DeleteRitualInput!
+    $condition: ModelRitualConditionInput
+  ) {
+    deleteRitual(input: $input, condition: $condition) {
+      id
+      stage
+      name
+      date
+      timeFrame
+      groupSize
+      frameId
+      templateId
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      actionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      participantPreferences {
+        items {
+          id
+          difficulty
+          mood
+          surpriseMe
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      persons {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const createActionItem = /* GraphQL */ `
+  mutation CreateActionItem(
+    $input: CreateActionItemInput!
+    $condition: ModelActionItemConditionInput
+  ) {
+    createActionItem(input: $input, condition: $condition) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateActionItem = /* GraphQL */ `
+  mutation UpdateActionItem(
+    $input: UpdateActionItemInput!
+    $condition: ModelActionItemConditionInput
+  ) {
+    updateActionItem(input: $input, condition: $condition) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteActionItem = /* GraphQL */ `
+  mutation DeleteActionItem(
+    $input: DeleteActionItemInput!
+    $condition: ModelActionItemConditionInput
+  ) {
+    deleteActionItem(input: $input, condition: $condition) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createVote = /* GraphQL */ `
+  mutation CreateVote(
+    $input: CreateVoteInput!
+    $condition: ModelVoteConditionInput
+  ) {
+    createVote(input: $input, condition: $condition) {
+      id
+      ideaId
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateVote = /* GraphQL */ `
+  mutation UpdateVote(
+    $input: UpdateVoteInput!
+    $condition: ModelVoteConditionInput
+  ) {
+    updateVote(input: $input, condition: $condition) {
+      id
+      ideaId
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteVote = /* GraphQL */ `
+  mutation DeleteVote(
+    $input: DeleteVoteInput!
+    $condition: ModelVoteConditionInput
+  ) {
+    deleteVote(input: $input, condition: $condition) {
+      id
+      ideaId
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createIdea = /* GraphQL */ `
+  mutation CreateIdea(
+    $input: CreateIdeaInput!
+    $condition: ModelIdeaConditionInput
+  ) {
+    createIdea(input: $input, condition: $condition) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const updateIdea = /* GraphQL */ `
+  mutation UpdateIdea(
+    $input: UpdateIdeaInput!
+    $condition: ModelIdeaConditionInput
+  ) {
+    updateIdea(input: $input, condition: $condition) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const deleteIdea = /* GraphQL */ `
+  mutation DeleteIdea(
+    $input: DeleteIdeaInput!
+    $condition: ModelIdeaConditionInput
+  ) {
+    deleteIdea(input: $input, condition: $condition) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
 export const createTemplate = /* GraphQL */ `
   mutation CreateTemplate(
     $input: CreateTemplateInput!
@@ -16,6 +928,46 @@ export const createTemplate = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      rituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
       areas {
         items {
           id
@@ -121,6 +1073,46 @@ export const updateTemplate = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      rituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
       areas {
         items {
           id
@@ -226,6 +1218,46 @@ export const deleteTemplate = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      rituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
       areas {
         items {
           id
@@ -762,6 +1794,7 @@ export const createParticipantPreferences = /* GraphQL */ `
       difficulty
       mood
       surpriseMe
+      ritualID
       _version
       _deleted
       _lastChangedAt
@@ -780,6 +1813,7 @@ export const updateParticipantPreferences = /* GraphQL */ `
       difficulty
       mood
       surpriseMe
+      ritualID
       _version
       _deleted
       _lastChangedAt
@@ -798,6 +1832,7 @@ export const deleteParticipantPreferences = /* GraphQL */ `
       difficulty
       mood
       surpriseMe
+      ritualID
       _version
       _deleted
       _lastChangedAt
@@ -820,6 +1855,135 @@ export const createPerson = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      startedRituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      assignedActionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      visitedRituals {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -837,6 +2001,135 @@ export const updatePerson = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      startedRituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      assignedActionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      visitedRituals {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -854,102 +2147,135 @@ export const deletePerson = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-    }
-  }
-`;
-export const createSimpleTest = /* GraphQL */ `
-  mutation CreateSimpleTest(
-    $input: CreateSimpleTestInput!
-    $condition: ModelSimpleTestConditionInput
-  ) {
-    createSimpleTest(input: $input, condition: $condition) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateSimpleTest = /* GraphQL */ `
-  mutation UpdateSimpleTest(
-    $input: UpdateSimpleTestInput!
-    $condition: ModelSimpleTestConditionInput
-  ) {
-    updateSimpleTest(input: $input, condition: $condition) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteSimpleTest = /* GraphQL */ `
-  mutation DeleteSimpleTest(
-    $input: DeleteSimpleTestInput!
-    $condition: ModelSimpleTestConditionInput
-  ) {
-    deleteSimpleTest(input: $input, condition: $condition) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const createSimpleTest2 = /* GraphQL */ `
-  mutation CreateSimpleTest2(
-    $input: CreateSimpleTest2Input!
-    $condition: ModelSimpleTest2ConditionInput
-  ) {
-    createSimpleTest2(input: $input, condition: $condition) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateSimpleTest2 = /* GraphQL */ `
-  mutation UpdateSimpleTest2(
-    $input: UpdateSimpleTest2Input!
-    $condition: ModelSimpleTest2ConditionInput
-  ) {
-    updateSimpleTest2(input: $input, condition: $condition) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteSimpleTest2 = /* GraphQL */ `
-  mutation DeleteSimpleTest2(
-    $input: DeleteSimpleTest2Input!
-    $condition: ModelSimpleTest2ConditionInput
-  ) {
-    deleteSimpleTest2(input: $input, condition: $condition) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
+      startedRituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      assignedActionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      visitedRituals {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -976,6 +2302,26 @@ export const createTemplateStage = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -1075,6 +2421,26 @@ export const updateTemplateStage = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -1174,6 +2540,26 @@ export const deleteTemplateStage = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -1273,6 +2659,26 @@ export const createTemplateIdeaType = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -1388,6 +2794,26 @@ export const updateTemplateIdeaType = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -1503,6 +2929,26 @@ export const deleteTemplateIdeaType = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -1582,6 +3028,597 @@ export const deleteTemplateIdeaType = /* GraphQL */ `
             id
             templateID
             ideatypeID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+    }
+  }
+`;
+export const createPersonRitual = /* GraphQL */ `
+  mutation CreatePersonRitual(
+    $input: CreatePersonRitualInput!
+    $condition: ModelPersonRitualConditionInput
+  ) {
+    createPersonRitual(input: $input, condition: $condition) {
+      id
+      personID
+      ritualID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      ritual {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+      person {
+        id
+        miroUserId
+        stickyColor
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        startedRituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        assignedActionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        visitedRituals {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+    }
+  }
+`;
+export const updatePersonRitual = /* GraphQL */ `
+  mutation UpdatePersonRitual(
+    $input: UpdatePersonRitualInput!
+    $condition: ModelPersonRitualConditionInput
+  ) {
+    updatePersonRitual(input: $input, condition: $condition) {
+      id
+      personID
+      ritualID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      ritual {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+      person {
+        id
+        miroUserId
+        stickyColor
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        startedRituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        assignedActionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        visitedRituals {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+    }
+  }
+`;
+export const deletePersonRitual = /* GraphQL */ `
+  mutation DeletePersonRitual(
+    $input: DeletePersonRitualInput!
+    $condition: ModelPersonRitualConditionInput
+  ) {
+    deletePersonRitual(input: $input, condition: $condition) {
+      id
+      personID
+      ritualID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      ritual {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+      person {
+        id
+        miroUserId
+        stickyColor
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        startedRituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        assignedActionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        visitedRituals {
+          items {
+            id
+            personID
+            ritualID
             _version
             _deleted
             _lastChangedAt

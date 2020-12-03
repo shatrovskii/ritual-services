@@ -1,5 +1,324 @@
 export const schema = {
     "models": {
+        "RetroBoard": {
+            "name": "RetroBoard",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "boardKey": {
+                    "name": "boardKey",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "activeRitual": {
+                    "name": "activeRitual",
+                    "isArray": false,
+                    "type": {
+                        "model": "Ritual"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "retroBoardActiveRitualId"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "RetroBoards",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Ritual": {
+            "name": "Ritual",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "stage": {
+                    "name": "stage",
+                    "isArray": false,
+                    "type": {
+                        "enum": "StageType"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "timeFrame": {
+                    "name": "timeFrame",
+                    "isArray": false,
+                    "type": {
+                        "enum": "TimeFrame"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "groupSize": {
+                    "name": "groupSize",
+                    "isArray": false,
+                    "type": {
+                        "enum": "GroupSize"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "frameId": {
+                    "name": "frameId",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "participantPreferences": {
+                    "name": "participantPreferences",
+                    "isArray": true,
+                    "type": {
+                        "model": "ParticipantPreferences"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "ritualID"
+                    }
+                },
+                "templateId": {
+                    "name": "templateId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "ideas": {
+                    "name": "ideas",
+                    "isArray": true,
+                    "type": {
+                        "model": "Idea"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "ritualID"
+                    }
+                },
+                "votes": {
+                    "name": "votes",
+                    "isArray": true,
+                    "type": {
+                        "model": "Vote"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "ritualID"
+                    }
+                },
+                "actionItems": {
+                    "name": "actionItems",
+                    "isArray": true,
+                    "type": {
+                        "model": "ActionItem"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "ritualID"
+                    }
+                },
+                "personID": {
+                    "name": "personID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "persons": {
+                    "name": "persons",
+                    "isArray": true,
+                    "type": {
+                        "model": "PersonRitual"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "ritual"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "Rituals",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byTemplate",
+                        "fields": [
+                            "templateId"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPerson",
+                        "fields": [
+                            "personID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "ParticipantPreferences": {
+            "name": "ParticipantPreferences",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "difficulty": {
+                    "name": "difficulty",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Difficulty"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "mood": {
+                    "name": "mood",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Mood"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "surpriseMe": {
+                    "name": "surpriseMe",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ritualID": {
+                    "name": "ritualID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "ParticipantPreferences",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byRitual",
+                        "fields": [
+                            "ritualID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Idea": {
             "name": "Idea",
             "fields": {
@@ -16,10 +335,428 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "votes": {
+                    "name": "votes",
+                    "isArray": true,
+                    "type": {
+                        "model": "Vote"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "ideaId"
+                    }
+                },
+                "ritualID": {
+                    "name": "ritualID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "personID": {
+                    "name": "personID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
                 }
             },
             "syncable": true,
             "pluralName": "Ideas",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byRitual",
+                        "fields": [
+                            "ritualID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPerson",
+                        "fields": [
+                            "personID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Vote": {
+            "name": "Vote",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "ideaId": {
+                    "name": "ideaId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "ritualID": {
+                    "name": "ritualID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "personID": {
+                    "name": "personID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "Votes",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byIdea",
+                        "fields": [
+                            "ideaId"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byRitual",
+                        "fields": [
+                            "ritualID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPerson",
+                        "fields": [
+                            "personID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "ActionItem": {
+            "name": "ActionItem",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ritualID": {
+                    "name": "ritualID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "personID": {
+                    "name": "personID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "ActionItems",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byRitual",
+                        "fields": [
+                            "ritualID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPerson",
+                        "fields": [
+                            "personID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PersonRitual": {
+            "name": "PersonRitual",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "person": {
+                    "name": "person",
+                    "isArray": false,
+                    "type": {
+                        "model": "Person"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "personID"
+                    }
+                },
+                "ritual": {
+                    "name": "ritual",
+                    "isArray": false,
+                    "type": {
+                        "model": "Ritual"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "ritualID"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "PersonRituals",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {
+                        "queries": null
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byPerson",
+                        "fields": [
+                            "personID",
+                            "ritualID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byRitual",
+                        "fields": [
+                            "ritualID",
+                            "personID"
+                        ]
+                    }
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Person": {
+            "name": "Person",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "miroUserId": {
+                    "name": "miroUserId",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "stickyColor": {
+                    "name": "stickyColor",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "startedRituals": {
+                    "name": "startedRituals",
+                    "isArray": true,
+                    "type": {
+                        "model": "Ritual"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "personID"
+                    }
+                },
+                "visitedRituals": {
+                    "name": "visitedRituals",
+                    "isArray": true,
+                    "type": {
+                        "model": "PersonRitual"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "person"
+                    }
+                },
+                "assignedActionItems": {
+                    "name": "assignedActionItems",
+                    "isArray": true,
+                    "type": {
+                        "model": "ActionItem"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "personID"
+                    }
+                },
+                "votes": {
+                    "name": "votes",
+                    "isArray": true,
+                    "type": {
+                        "model": "Vote"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "personID"
+                    }
+                },
+                "ideas": {
+                    "name": "ideas",
+                    "isArray": true,
+                    "type": {
+                        "model": "Idea"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "personID"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "People",
             "attributes": [
                 {
                     "type": "model",
@@ -107,6 +844,20 @@ export const schema = {
                     "association": {
                         "connectionType": "HAS_MANY",
                         "associatedWith": "templateID"
+                    }
+                },
+                "rituals": {
+                    "name": "rituals",
+                    "isArray": true,
+                    "type": {
+                        "model": "Ritual"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "templateId"
                     }
                 }
             },
@@ -574,117 +1325,6 @@ export const schema = {
                     }
                 }
             ]
-        },
-        "ParticipantPreferences": {
-            "name": "ParticipantPreferences",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "difficulty": {
-                    "name": "difficulty",
-                    "isArray": false,
-                    "type": {
-                        "enum": "Difficulty"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "mood": {
-                    "name": "mood",
-                    "isArray": false,
-                    "type": {
-                        "enum": "Mood"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "surpriseMe": {
-                    "name": "surpriseMe",
-                    "isArray": false,
-                    "type": "Boolean",
-                    "isRequired": false,
-                    "attributes": []
-                }
-            },
-            "syncable": true,
-            "pluralName": "ParticipantPreferences",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "public",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "Person": {
-            "name": "Person",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "miroUserId": {
-                    "name": "miroUserId",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "stickyColor": {
-                    "name": "stickyColor",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                }
-            },
-            "syncable": true,
-            "pluralName": "People",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "public",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
         }
     },
     "enums": {
@@ -695,8 +1335,27 @@ export const schema = {
                 "SETUP",
                 "PREVIEW",
                 "GATHERING",
-                "DECITION",
+                "DECISION",
                 "CLOSING"
+            ]
+        },
+        "TimeFrame": {
+            "name": "TimeFrame",
+            "values": [
+                "ID",
+                "SHORT",
+                "NORMAL",
+                "EXTENDED",
+                "LARGE"
+            ]
+        },
+        "GroupSize": {
+            "name": "GroupSize",
+            "values": [
+                "ID",
+                "SMALL",
+                "MEDIUM",
+                "LARGE"
             ]
         },
         "Difficulty": {
@@ -718,27 +1377,8 @@ export const schema = {
                 "HIGHENERGY",
                 "EXCITED"
             ]
-        },
-        "GroupSize": {
-            "name": "GroupSize",
-            "values": [
-                "ID",
-                "SMALL",
-                "MEDIUM",
-                "LARGE"
-            ]
-        },
-        "TimeFrame": {
-            "name": "TimeFrame",
-            "values": [
-                "ID",
-                "SHORT",
-                "NORMAL",
-                "EXTENDED",
-                "LARGE"
-            ]
         }
     },
     "nonModels": {},
-    "version": "c9e73d13850dc7494a87073f9442b34e"
+    "version": "bacd58e4153a415c60dfb0745c9e9431"
 };

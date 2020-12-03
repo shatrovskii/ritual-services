@@ -7,8 +7,23 @@ const StageType = {
   "SETUP": "SETUP",
   "PREVIEW": "PREVIEW",
   "GATHERING": "GATHERING",
-  "DECITION": "DECITION",
+  "DECISION": "DECISION",
   "CLOSING": "CLOSING"
+};
+
+const TimeFrame = {
+  "ID": "ID",
+  "SHORT": "SHORT",
+  "NORMAL": "NORMAL",
+  "EXTENDED": "EXTENDED",
+  "LARGE": "LARGE"
+};
+
+const GroupSize = {
+  "ID": "ID",
+  "SMALL": "SMALL",
+  "MEDIUM": "MEDIUM",
+  "LARGE": "LARGE"
 };
 
 const Difficulty = {
@@ -27,36 +42,26 @@ const Mood = {
   "EXCITED": "EXCITED"
 };
 
-const GroupSize = {
-  "ID": "ID",
-  "SMALL": "SMALL",
-  "MEDIUM": "MEDIUM",
-  "LARGE": "LARGE"
-};
-
-const TimeFrame = {
-  "ID": "ID",
-  "SHORT": "SHORT",
-  "NORMAL": "NORMAL",
-  "EXTENDED": "EXTENDED",
-  "LARGE": "LARGE"
-};
-
-const { Idea, Template, TemplateStage, Stage, TemplateIdeaType, IdeaType, TemplateArea, ParticipantPreferences, Person } = initSchema(schema);
+const { RetroBoard, Ritual, ParticipantPreferences, Idea, Vote, ActionItem, PersonRitual, Person, Template, TemplateStage, Stage, TemplateIdeaType, IdeaType, TemplateArea } = initSchema(schema);
 
 export {
+  RetroBoard,
+  Ritual,
+  ParticipantPreferences,
   Idea,
+  Vote,
+  ActionItem,
+  PersonRitual,
+  Person,
   Template,
   TemplateStage,
   Stage,
   TemplateIdeaType,
   IdeaType,
   TemplateArea,
-  ParticipantPreferences,
-  Person,
   StageType,
-  Difficulty,
-  Mood,
+  TimeFrame,
   GroupSize,
-  TimeFrame
+  Difficulty,
+  Mood
 };
