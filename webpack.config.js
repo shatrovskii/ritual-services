@@ -61,12 +61,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: 'index.html',
       template: 'index.html',
-      chunks : ['index'],
-      inject: false
+      // chunks : ['index'],
+      // inject: true
     }),
-    // new MiniCssExtractPlugin({
-    //   filename: 'styles.css',
-    // }),
+    new HtmlWebpackPlugin({
+      filename: 'sidebar.html',
+      template: 'sidebar.html',
+    })
   ]
 };
