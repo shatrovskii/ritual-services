@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -55,11 +54,11 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
   },
-  // devServer: {
-  //   contentBase: path.join(__dirname, 'dist'),
-  //   hot: true,
-  //   port: 8081
-  // }
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    port: 8081
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
