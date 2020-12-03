@@ -27,4 +27,4 @@
   * `src/API.ts`
   * `Yes`
   
-TODO: there will be predefined constants for DataStorage and AppSync instances to make actual queries.
+Use `Amplify` object to make GraphQL API requests or interact with DataStore 
