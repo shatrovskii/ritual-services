@@ -2,6 +2,813 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getRetroBoard = /* GraphQL */ `
+  query GetRetroBoard($id: ID!) {
+    getRetroBoard(id: $id) {
+      id
+      boardKey
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      activeRitual {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+    }
+  }
+`;
+export const listRetroBoards = /* GraphQL */ `
+  query ListRetroBoards(
+    $filter: ModelRetroBoardFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRetroBoards(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        boardKey
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        activeRitual {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncRetroBoards = /* GraphQL */ `
+  query SyncRetroBoards(
+    $filter: ModelRetroBoardFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncRetroBoards(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        boardKey
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        activeRitual {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const listRituals = /* GraphQL */ `
+  query ListRituals(
+    $filter: ModelRitualFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listRituals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getRitual = /* GraphQL */ `
+  query GetRitual($id: ID!) {
+    getRitual(id: $id) {
+      id
+      stage
+      name
+      date
+      timeFrame
+      groupSize
+      frameId
+      templateId
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      actionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      participantPreferences {
+        items {
+          id
+          difficulty
+          mood
+          surpriseMe
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      persons {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const syncRituals = /* GraphQL */ `
+  query SyncRituals(
+    $filter: ModelRitualFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncRituals(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        stage
+        name
+        date
+        timeFrame
+        groupSize
+        frameId
+        templateId
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        actionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        participantPreferences {
+          items {
+            id
+            difficulty
+            mood
+            surpriseMe
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        persons {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getActionItem = /* GraphQL */ `
+  query GetActionItem($id: ID!) {
+    getActionItem(id: $id) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listActionItems = /* GraphQL */ `
+  query ListActionItems(
+    $filter: ModelActionItemFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listActionItems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        text
+        ritualID
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncActionItems = /* GraphQL */ `
+  query SyncActionItems(
+    $filter: ModelActionItemFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncActionItems(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        text
+        ritualID
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getVote = /* GraphQL */ `
+  query GetVote($id: ID!) {
+    getVote(id: $id) {
+      id
+      ideaId
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listVotes = /* GraphQL */ `
+  query ListVotes(
+    $filter: ModelVoteFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listVotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        ideaId
+        ritualID
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncVotes = /* GraphQL */ `
+  query SyncVotes(
+    $filter: ModelVoteFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncVotes(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        ideaId
+        ritualID
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const getIdea = /* GraphQL */ `
+  query GetIdea($id: ID!) {
+    getIdea(id: $id) {
+      id
+      text
+      ritualID
+      personID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const listIdeas = /* GraphQL */ `
+  query ListIdeas(
+    $filter: ModelIdeaFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listIdeas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        text
+        ritualID
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncIdeas = /* GraphQL */ `
+  query SyncIdeas(
+    $filter: ModelIdeaFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncIdeas(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        text
+        ritualID
+        personID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
 export const listTemplates = /* GraphQL */ `
   query ListTemplates(
     $filter: ModelTemplateFilterInput
@@ -18,6 +825,26 @@ export const listTemplates = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -81,6 +908,46 @@ export const getTemplate = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
+      rituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
       areas {
         items {
           id
@@ -194,6 +1061,26 @@ export const syncTemplates = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        rituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
         areas {
           items {
             id
@@ -643,6 +1530,7 @@ export const getParticipantPreferences = /* GraphQL */ `
       difficulty
       mood
       surpriseMe
+      ritualID
       _version
       _deleted
       _lastChangedAt
@@ -667,6 +1555,7 @@ export const listParticipantPreferencess = /* GraphQL */ `
         difficulty
         mood
         surpriseMe
+        ritualID
         _version
         _deleted
         _lastChangedAt
@@ -696,6 +1585,7 @@ export const syncParticipantPreferences = /* GraphQL */ `
         difficulty
         mood
         surpriseMe
+        ritualID
         _version
         _deleted
         _lastChangedAt
@@ -704,20 +1594,6 @@ export const syncParticipantPreferences = /* GraphQL */ `
       }
       nextToken
       startedAt
-    }
-  }
-`;
-export const getPerson = /* GraphQL */ `
-  query GetPerson($id: ID!) {
-    getPerson(id: $id) {
-      id
-      miroUserId
-      stickyColor
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -737,9 +1613,231 @@ export const listPersons = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
+        startedRituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        assignedActionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        visitedRituals {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
       }
       nextToken
       startedAt
+    }
+  }
+`;
+export const getPerson = /* GraphQL */ `
+  query GetPerson($id: ID!) {
+    getPerson(id: $id) {
+      id
+      miroUserId
+      stickyColor
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      startedRituals {
+        items {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      assignedActionItems {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      votes {
+        items {
+          id
+          ideaId
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+      ideas {
+        items {
+          id
+          text
+          ritualID
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          votes {
+            nextToken
+            startedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
+      visitedRituals {
+        items {
+          id
+          personID
+          ritualID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          ritual {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          person {
+            id
+            miroUserId
+            stickyColor
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+        }
+        nextToken
+        startedAt
+      }
     }
   }
 `;
@@ -765,128 +1863,85 @@ export const syncPeople = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getSimpleTest = /* GraphQL */ `
-  query GetSimpleTest($id: ID!) {
-    getSimpleTest(id: $id) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listSimpleTests = /* GraphQL */ `
-  query ListSimpleTests(
-    $filter: ModelSimpleTestFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSimpleTests(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        S3_link
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncSimpleTests = /* GraphQL */ `
-  query SyncSimpleTests(
-    $filter: ModelSimpleTestFilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSimpleTests(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        S3_link
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const getSimpleTest2 = /* GraphQL */ `
-  query GetSimpleTest2($id: ID!) {
-    getSimpleTest2(id: $id) {
-      id
-      S3_link
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listSimpleTest2s = /* GraphQL */ `
-  query ListSimpleTest2s(
-    $filter: ModelSimpleTest2FilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listSimpleTest2s(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        S3_link
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      nextToken
-      startedAt
-    }
-  }
-`;
-export const syncSimpleTest2s = /* GraphQL */ `
-  query SyncSimpleTest2s(
-    $filter: ModelSimpleTest2FilterInput
-    $limit: Int
-    $nextToken: String
-    $lastSync: AWSTimestamp
-  ) {
-    syncSimpleTest2s(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      lastSync: $lastSync
-    ) {
-      items {
-        id
-        S3_link
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
+        startedRituals {
+          items {
+            id
+            stage
+            name
+            date
+            timeFrame
+            groupSize
+            frameId
+            templateId
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        assignedActionItems {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        votes {
+          items {
+            id
+            ideaId
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        ideas {
+          items {
+            id
+            text
+            ritualID
+            personID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+        visitedRituals {
+          items {
+            id
+            personID
+            ritualID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
       }
       nextToken
       startedAt
@@ -924,6 +1979,10 @@ export const syncTemplateStages = /* GraphQL */ `
           _lastChangedAt
           createdAt
           updatedAt
+          rituals {
+            nextToken
+            startedAt
+          }
           areas {
             nextToken
             startedAt
@@ -990,6 +2049,10 @@ export const syncTemplateIdeaTypes = /* GraphQL */ `
           _lastChangedAt
           createdAt
           updatedAt
+          rituals {
+            nextToken
+            startedAt
+          }
           areas {
             nextToken
             startedAt
@@ -1017,6 +2080,100 @@ export const syncTemplateIdeaTypes = /* GraphQL */ `
             startedAt
           }
           templates {
+            nextToken
+            startedAt
+          }
+        }
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const syncPersonRituals = /* GraphQL */ `
+  query SyncPersonRituals(
+    $filter: ModelPersonRitualFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncPersonRituals(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        personID
+        ritualID
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+        ritual {
+          id
+          stage
+          name
+          date
+          timeFrame
+          groupSize
+          frameId
+          templateId
+          personID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          actionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          participantPreferences {
+            nextToken
+            startedAt
+          }
+          persons {
+            nextToken
+            startedAt
+          }
+        }
+        person {
+          id
+          miroUserId
+          stickyColor
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+          startedRituals {
+            nextToken
+            startedAt
+          }
+          assignedActionItems {
+            nextToken
+            startedAt
+          }
+          votes {
+            nextToken
+            startedAt
+          }
+          ideas {
+            nextToken
+            startedAt
+          }
+          visitedRituals {
             nextToken
             startedAt
           }

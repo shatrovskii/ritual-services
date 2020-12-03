@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "aws-amplify": "^3.3.11",
+    "@aws-amplify/datastore": "^2.9.0",
     "classnames": "^2.2.6",
     "mirotone": "^1.0.2",
     "react": "16.13.1",
