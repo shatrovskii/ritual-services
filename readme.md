@@ -7,9 +7,24 @@
 5. Get https-url from _ngrok_ and paste it in `Web-plugin url` in your app settings
 
 
-## Amplify Backend
+## Amplify Backend:
 
-1. Install amplify `npm install -g @aws-amplify/cli`
-2. Install amplify library `npm install npm i aws-amplify`
-2. Integrate backend into client repo `amplify pull --appId d2oveujq8uapz3 --envName staging`
-3. Generate GraphQL and data schema `amplify codegen add` or `amplify codegen` if already exists
+* Install amplify `npm install -g @aws-amplify/cli`
+* Install amplify library `npm install aws-amplify @aws-amplify/ui-react`
+* Integrate backend into client repo `amplify pull --appId d2oveujq8uapz3 --envName staging`
+  * `whatever`
+  * `javascript`
+  * `react`
+  * `src`
+  * `dist`
+  * `npm run build`
+  * `npm run serve`
+* Generate GraphQL and data schema `amplify codegen add` or `amplify codegen` if already exists
+  * `typescript`
+  * `src/graphql/**/*.ts`
+  * `Yes`
+  * `4` (probably?)
+  * `src/API.ts`
+  * `Yes`
+  
+TODO: there will be predefined constants for DataStorage and AppSync instances to make actual queries.

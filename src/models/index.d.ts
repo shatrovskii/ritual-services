@@ -42,6 +42,13 @@ export enum TimeFrame {
 
 
 
+export declare class Idea {
+  readonly id: string;
+  readonly text?: string;
+  constructor(init: ModelInit<Idea>);
+  static copyOf(source: Idea, mutator: (draft: MutableModel<Idea>) => MutableModel<Idea> | void): Idea;
+}
+
 export declare class Template {
   readonly id: string;
   readonly boardKey?: string;

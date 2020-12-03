@@ -42,9 +42,10 @@ const TimeFrame = {
   "LARGE": "LARGE"
 };
 
-const { Template, TemplateStage, Stage, TemplateIdeaType, IdeaType, TemplateArea, ParticipantPreferences, Person } = initSchema(schema);
+const { Idea, Template, TemplateStage, Stage, TemplateIdeaType, IdeaType, TemplateArea, ParticipantPreferences, Person } = initSchema(schema);
 
 export {
+  Idea,
   Template,
   TemplateStage,
   Stage,
