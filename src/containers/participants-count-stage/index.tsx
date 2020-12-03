@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import * as React from 'react'
 import {SidebarLayout} from '../../layout'
 
 import classNames from 'classnames'
 import 'mirotone/dist/styles.css'
 import './styles.less'
 
-export class FormatSelectionComponent extends Component {
+export class ParticipantsCountStage extends React.Component {
 	render() {
 		return (
 			<SidebarLayout>

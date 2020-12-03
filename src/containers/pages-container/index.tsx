@@ -1,15 +1,19 @@
-import React, {Component, Fragment} from 'react'
-import { connect } from 'react-redux'
+import * as React from 'react'
+import {connect} from 'react-redux'
 
 import {Pages, setPage} from '../../store/reducers'
-import WelcomePage from '../welcome-page'
-import {FormatSelectionComponent} from '../format-selection'
+import StartStage from '../start-stage'
+import {ParticipantsCountStage} from '../participants-count-stage'
 
-class PagesContainer extends Component {
+class PagesContainer extends React.Component {
+	changePage = (value) => {
+		const {setPage} = this.props;
+		setPage(value);
+	}
 	getPage = (type) => {
 		const containers = new Map([
-			[Pages.WELCOME_PAGE, <WelcomePage />],
-			[Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
+			[Pages.START_STAGE, <StartStage changePage={this.changePage}/>],
+			[Pages.PARTICIPANTS_COUNT_STAGE, <ParticipantsCountStage />],
 			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
 			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
 			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
@@ -22,7 +26,7 @@ class PagesContainer extends Component {
 		const {currentPage} = this.props;
 
 		return (
-			<Fragment>{this.getPage(currentPage)}</Fragment>
+			<React.Fragment>{this.getPage(currentPage)}</React.Fragment>
 		)
 	}
 }
@@ -31,10 +35,10 @@ const mapStateToProps = (state) => ({
 	currentPage: state.currentPage
 })
 
-const mapDispatchToProps = {setPage}
-
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	{
+		setPage
+	}
 )(PagesContainer)
 

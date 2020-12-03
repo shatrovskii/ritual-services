@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 import classNames from 'classnames'
 import 'mirotone/dist/styles.css'
@@ -9,7 +9,7 @@ export const SidebarLayout = ({children}) => {
 		<div className={classNames('sidebar')}>
 			{children}
 			<div className={classNames('sidebar__footer')}>
-				<div className="icon icon-arrow-right"></div>
+				<div className="icon icon-arrow-right" />
 			</div>
 		</div>
 	)

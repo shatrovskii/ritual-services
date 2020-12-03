@@ -1,26 +1,14 @@
 export const Pages = {
-	WELCOME_PAGE : 'welcome_page', //видит фасилитатор
-	GENERAL_SETTINGS : 'general_settings',//видит фасилитатор
-	OTHER_SETTINGS : 'other_settings',
-	SUGGESTED_TEMPLATES : 'suggestes_templates',//видит фасилитатор
-	SHOW_TIME : 'show_time',
-	VOTING : 'voting',
-	ACTIONS : 'actions',
+	START_STAGE : 'start_stage',
+	PARTICIPANTS_COUNT_STAGE : 'participants_count_stage',
+	MOOD_SELECTION_STAGE : 'mood_selection_stage',
+	RETRO_BUILD_STAGE : 'retro_build_stage',
+	EXECUTION_STAGE : 'execution_stage',
+	FEEDBACK_STAGE : 'feedback_stage',
 }
 
-// export enum Pages  {
-// 	WELCOME_PAGE = 'welcome_page', //видит фасилитатор
-// 	GENERAL_SETTINGS = 'general_settings',//видит фасилитатор
-// 	OTHER_SETTINGS = 'other_settings',
-// 	SUGGESTED_TEMPLATES = 'suggestes_templates',//видит фасилитатор
-// 	SHOW_TIME = 'show_time',
-// 	VOTING = 'voting',
-// 	ACTIONS = 'actions',
-// }
-
-
 const initialState = {
-	currentPage: Pages.WELCOME_PAGE
+	currentPage: Pages.START_STAGE
 };
 
 //action creators
