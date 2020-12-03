@@ -16,16 +16,27 @@
 }
 
 .slider-item {
+  height: 30px;
+
   &--active {
+    position: relative;
     color: var(--blue900);
-    height: 30px;
+    box-sizing: border-box;
+    border-bottom: 5px solid var(--blue900);
+    left: 0;
+    transition:all 50ms ease-in-out;
   }
 }
 
 .slider-indicator {
+  //opacity: 0;
   position: relative;
   height: 5px;
   background: var(--blue900);
   left: 0;
   transition:all 500ms ease-in-out;
+  //
+  //&--visible {
+  //  opacity: 1;
+  //}
 }

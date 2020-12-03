@@ -5,6 +5,7 @@ import {setPage} from '../../store/reducers'
 import StartStage from '../start-stage'
 import {ParticipantsCountStage} from '../participants-count-stage'
 import {Pages} from './constants'
+import {MoodSelectionStage} from '../mood-selection-stage'
 
 class PagesContainer extends React.Component {
 	changePage = (value) => {
@@ -14,8 +15,8 @@ class PagesContainer extends React.Component {
 	getPage = (type) => {
 		const containers = new Map([
 			[Pages.START_STAGE, <StartStage changePage={this.changePage}/>],
-			[Pages.PARTICIPANTS_COUNT_STAGE, <ParticipantsCountStage />],
-			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
+			[Pages.PARTICIPANTS_COUNT_STAGE, <ParticipantsCountStage changePage={this.changePage}/>],
+			[Pages.MOOD_SELECTION_STAGE, <MoodSelectionStage changePage={this.changePage} />],
 			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
 			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
 		]);

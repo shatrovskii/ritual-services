@@ -8,14 +8,14 @@ import './styles.less'
 const SliderItem = ({label, isActive = false}) =>
 	<React.Fragment>
 		<div className={classNames({'slider-item': true, 'slider-item--active': isActive})}>{label}</div>
-		{isActive && <div className="slider-indicator" /> }
 	</React.Fragment>
 
-const Slider = ({items}) => {
+const Slider = ({items, onClick}) => {
 	const [selectedItemId, setSelectedItemId] = React.useState(0);
-	const selectItem = (id: number) => {
-		console.log('id=', id)
-		setSelectedItemId(id)
+
+	const handleClick = (item) => {
+		setSelectedItemId(item.id)
+		onClick && onClick(item.label)
 	}
 
 	const isActive = (id: number): boolean => selectedItemId === id
@@ -23,9 +23,9 @@ const Slider = ({items}) => {
 	return (
 		<div className="slider-wrapper">
 			<div className="slider">
-				{items.map(({id,label})=>
-					<div className="slider-header" onClick={() => selectItem(id)}>
-						<SliderItem label={label} isActive={isActive(id)}/>
+				{items.map((item)=>
+					<div className="slider-header" onClick={() => handleClick(item)}>
+						<SliderItem label={item.label} isActive={isActive(item.id)}/>
 					</div>
 				)}
 			</div>

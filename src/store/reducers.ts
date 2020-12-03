@@ -1,7 +1,14 @@
 import {Pages} from '../containers/pages-container/constants'
 
 const initialState = {
-	currentPage: Pages.START_STAGE
+	currentPage: Pages.START_STAGE,
+	participantsCount: null,
+	user: {
+		id: null,
+		role: null,
+		emotion: null,
+		retroHardness: null
+	}
 };
 
 //action creators

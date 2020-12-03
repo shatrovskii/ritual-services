@@ -9,6 +9,7 @@ import {API, graphqlOperation, Amplify} from "aws-amplify";
 import * as queries from "../../graphql/queries";
 import * as mutations from "../../graphql/mutations";
 import Slider from '../../components/slider'
+import {Pages} from '../pages-container/constants'
 
 const timeOptions = [
 	{
@@ -43,7 +44,12 @@ const groupSizeOptions = [
 	}];
 
 export class ParticipantsCountStage extends React.Component {
+	handleSelect = (item) => {
+		console.log('handle select', item)
+	}
+
     render() {
+    	const {changePage} = this.props;
         return (
 		<SidebarLayout>
 			<h1 className="h2">New retrospective</h1>
@@ -53,13 +59,13 @@ export class ParticipantsCountStage extends React.Component {
 			</div>
 			<div className="form-group">
 				<label>Time frame (min)</label>
-				<Slider items={timeOptions}/>
+				<Slider items={timeOptions} onClick={this.handleSelect}/>
 			</div>
 			<div className="form-group">
 				<label>Group size</label>
-				<Slider items={groupSizeOptions}/>
+				<Slider items={groupSizeOptions} onClick={this.handleSelect}/>
 			</div>
-			<button className={classNames('button', 'button-primary')} onClick={() => console.log('Click!')}>Start and summon everyone</button>
+			<button className={classNames('button', 'button-primary')} onClick={() => changePage(Pages.MOOD_SELECTION_STAGE)}>Start and summon everyone</button>
             <button className={classNames('button', 'button-primary')} onClick={this.handleCreateClick}>Create
             </button>
             <button className={classNames('button', 'button-primary')} onClick={this.handleReadClick}>Read</button>
