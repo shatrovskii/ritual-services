@@ -1,9 +1,10 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
 
-import {Pages, setPage} from '../../store/reducers'
+import {setPage} from '../../store/reducers'
 import StartStage from '../start-stage'
 import {ParticipantsCountStage} from '../participants-count-stage'
+import {Pages} from './constants'
 
 class PagesContainer extends React.Component {
 	changePage = (value) => {

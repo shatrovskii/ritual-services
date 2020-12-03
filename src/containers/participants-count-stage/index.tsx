@@ -9,7 +9,7 @@ export class ParticipantsCountStage extends React.Component {
 	render() {
 		return (
 			<SidebarLayout>
-				<h1 className="h1">Choose retro format</h1>
+				<h1 className="h2">Choose retro format</h1>
 				<button className={classNames('button', 'button-primary')} onClick={() => console.log('Click!')}>Click</button>
 			</SidebarLayout>
 		)

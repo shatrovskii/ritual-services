@@ -6,9 +6,9 @@ import './styles.less'
 
 export const SidebarLayout = ({children}) => {
 	return (
-		<div className={classNames('sidebar')}>
+		<div className={classNames('layout')}>
 			{children}
-			<div className={classNames('sidebar__footer')}>
+			<div className={classNames('layout__footer')}>
 				<div className="icon icon-arrow-right" />
 			</div>
 		</div>
