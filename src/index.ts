@@ -1,5 +1,6 @@
 import awsExports from './aws-exports';
 import {Amplify} from 'aws-amplify';
+Amplify.configure(awsExports);
 
 const retroIcon = `<g id="icon-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g id="icon-48" transform="translate(1.000000, 2.000000)" fill="currentColor" fill-rule="nonzero">
@@ -7,7 +8,6 @@ const retroIcon = `<g id="icon-24" stroke="none" stroke-width="1" fill="none" fi
       </g>`
 
 miro.onReady(async () => {
-  Amplify.configure(awsExports);
 
   miro.initialize({
     extensionPoints: {

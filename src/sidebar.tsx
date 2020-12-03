@@ -5,10 +5,9 @@ import store from './store/store'
 import PagesContainer from './containers/pages-container'
 import {Amplify} from "aws-amplify";
 import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
 
 miro.onReady(() => {
-    Amplify.configure(awsExports);
-
     ReactDOM.render(
         <Provider store={store}>
             <PagesContainer />
