@@ -4,6 +4,8 @@ const retroIcon = `<g id="icon-24" stroke="none" stroke-width="1" fill="none" fi
       </g>`
 
 miro.onReady(async () => {
+
+
   miro.initialize({
     extensionPoints: {
       exportMenu: {

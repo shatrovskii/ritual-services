@@ -1,5 +1,48 @@
 export const schema = {
     "models": {
+        "Idea": {
+            "name": "Idea",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "text": {
+                    "name": "text",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "Ideas",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Template": {
             "name": "Template",
             "fields": {
@@ -697,5 +740,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "1268c080869dca88b6b55edfb265e735"
+    "version": "c9e73d13850dc7494a87073f9442b34e"
 };
