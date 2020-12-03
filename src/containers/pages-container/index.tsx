@@ -9,7 +9,11 @@ class PagesContainer extends Component {
 	getPage = (type) => {
 		const containers = new Map([
 			[Pages.WELCOME_PAGE, <WelcomePage />],
-			[Pages.GENERAL_SETTINGS, <FormatSelectionComponent />]]);
+			[Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
+			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
+			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
+			// [Pages.GENERAL_SETTINGS, <FormatSelectionComponent />],
+		]);
 
 		return containers.get(type) || null;
 	};
