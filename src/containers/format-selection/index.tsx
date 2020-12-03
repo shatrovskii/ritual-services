@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {SidebarLayout} from '../layout'
+import {SidebarLayout} from '../../layout'
 
 import classNames from 'classnames'
 import 'mirotone/dist/styles.css'

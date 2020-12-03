@@ -6,8 +6,15 @@ const retroIcon = `<g id="icon-24" stroke="none" stroke-width="1" fill="none" fi
 miro.onReady(async () => {
   miro.initialize({
     extensionPoints: {
+      exportMenu: {
+        title: 'Retro Buddy',
+        svgIcon: retroIcon,
+        onClick: () => {
+          miro.board.ui.openLeftSidebar('sidebar.html')
+        },
+      },
       bottomBar: {
-        title: 'Retro',
+        title: 'Retro Buddy',
         svgIcon: retroIcon,
         onClick: () => {
           miro.board.ui.openLeftSidebar('sidebar.html')
