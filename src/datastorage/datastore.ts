@@ -1,9 +1,9 @@
 import firebase from "firebase";
 import { v4 as uuidv4 } from 'uuid';
 
-import {RetroBoard, Template} from "datastorage/index";
+import {RetroBoard, Template} from "datastorage/models";
 
-export async function initBoard() {
+export async function initBoard(): Promise<RetroBoard> {
     const db = firebase.firestore()
     const boardInfo = await miro.board.info.get()
 
@@ -12,7 +12,7 @@ export async function initBoard() {
     return retroBoard
 }
 
-export async function readBoard() {
+export async function readBoard(): Promise<RetroBoard | undefined> {
     const db = firebase.firestore()
     const boardInfo = await miro.board.info.get()
     const board = await db.collection("RetroBoards").doc(boardInfo.id).get()

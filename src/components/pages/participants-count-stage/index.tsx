@@ -5,10 +5,6 @@ import { SidebarLayout } from "components/layout";
 import classNames from "classnames";
 import "mirotone/dist/styles.css";
 import "./styles.less";
-import { Person } from "models";
-import { API, graphqlOperation, Amplify } from "aws-amplify";
-import * as queries from "graphql/queries";
-import * as mutations from "graphql/mutations";
 import Slider from "components/slider";
 import { Pages } from "components/pages-container/constants";
 import {setPage, setGroupSize, setRitualTime} from 'store/reducers'

@@ -76,7 +76,7 @@ export type ActionItem = {
 }
 
 export type Person = {
-  miroUserId?: number,
+  miroUserId?: string,
   stickyColor?: string,
 }
 
