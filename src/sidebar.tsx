@@ -3,9 +3,10 @@ import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store/store'
 import PagesContainer from './components/pages-container'
-import {Amplify} from "aws-amplify";
-import awsExports from "./aws-exports";
-Amplify.configure(awsExports);
+import firebase from "firebase";
+import {firebaseConfig} from "firebaseconfig";
+
+firebase.initializeApp(firebaseConfig)
 
 miro.onReady(() => {
     ReactDOM.render(
