@@ -7,16 +7,32 @@ import './styles.less'
 import {Pages} from 'components/pages-container/constants'
 import emoji from 'react-easy-emoji'
 import {RitualState} from 'store/reducers'
-import FrameworkCard from 'components/framework-card'
+import FrameworkCard, {FrameworkCardType} from 'components/framework-card'
 
 type Props = {
 	changePage: (page: Pages) => {};
 	ritual: RitualState;
 };
 
+function addTemplate() {
+	fetch('https://api.miro.com/v1/boards/o9J_lc14pJ4=/widgets/', {
+		'method': 'GET',
+		'headers': {
+			'authorization': 'Bearer f4b42cbd-33d6-4164-bc9e-dda0797dc1fe'
+		}
+	})
+		.then(response => {
+			console.log(response)
+		})
+		.catch(err => {
+			console.error(err)
+		})
+}
+
 class RetroBuildStage extends React.Component<Props> {
 	completeStage = () => {
-		this.props.changePage(Pages.EXECUTION_STAGE)
+		addTemplate()
+		//this.props.changePage(Pages.EXECUTION_STAGE)
 	}
 
 	render() {
@@ -35,9 +51,9 @@ class RetroBuildStage extends React.Component<Props> {
         	</span>
 				</p>
 				<p className="framework-list">
-					<FrameworkCard description="Genie in a bottle"/>
-					<FrameworkCard description="Wish granted"/>
-					<FrameworkCard description="Chaos coctail party"/>
+					<FrameworkCard title="Genie in a bottle" type={FrameworkCardType.GATHER_DATA}/>
+					<FrameworkCard title="Wish granted" type={FrameworkCardType.GENERATE_INSIGHTS}/>
+					<FrameworkCard title="Chaos coctail party" type={FrameworkCardType.DECIDE_WHAT_TO_DO}/>
 				</p>
 				<button
 					className={classNames('button', 'button-primary')}
