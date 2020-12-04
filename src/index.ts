@@ -12,7 +12,7 @@ miro.onReady(async () => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: `Dima's Retro Buddy`,
+        title: `Retro Buddy`,
         svgIcon: retroIcon,
         onClick: () => {
           miro.board.ui.openLeftSidebar('sidebar.html')
