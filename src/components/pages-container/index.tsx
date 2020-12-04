@@ -2,7 +2,7 @@ import * as React from 'react'
 import {connect} from 'react-redux'
 
 import {setPage} from 'store/reducers'
-import StartStage from 'components/pages/start-stage'
+import {StartStage} from 'components/pages/start-stage'
 import {Pages} from 'components/pages-container/constants'
 import {MoodSelectionStage} from 'components/pages/mood-selection-stage'
 import RetroBuildStage from 'components/pages/retro-build-stage'
