@@ -1,5 +1,116 @@
 export const schema = {
     "models": {
+        "PatchedRitualBoard": {
+            "name": "PatchedRitualBoard",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "boardKey": {
+                    "name": "boardKey",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "patchedRitual": {
+                    "name": "patchedRitual",
+                    "isArray": false,
+                    "type": {
+                        "model": "PatchedRitual"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "patchedRitualBoardPatchedRitualId"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "PatchedRitualBoards",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "PatchedRitual": {
+            "name": "PatchedRitual",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "stage": {
+                    "name": "stage",
+                    "isArray": true,
+                    "type": {
+                        "enum": "StageType"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "PatchedRituals",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "RetroBoard": {
             "name": "RetroBoard",
             "fields": {
@@ -1380,5 +1491,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "bacd58e4153a415c60dfb0745c9e9431"
+    "version": "5923dca19e19abbb0b2bda602f9b902c"
 };

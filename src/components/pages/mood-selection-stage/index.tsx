@@ -1,12 +1,13 @@
 import * as React from 'react'
-import {SidebarLayout} from '../../layout'
-import {Pages} from '../pages-container/constants'
+import {SidebarLayout} from 'components/layout'
+import {Pages} from 'components/pages-container/constants'
 import classNames from 'classnames'
 import 'mirotone/dist/styles.css'
 import './styles.less'
-import {EmotionalScale} from '../../components/emotional-scale'
+import {EmotionalScale} from '../../emotional-scale'
+import EmojiOption from 'components/emotional-scale/emoji-option'
 
-const hardnessOptions = [
+const hardnessOptions: EmojiOption[] = [
 	{
 		id: 0,
 		label: "easy",
@@ -23,7 +24,7 @@ const hardnessOptions = [
 		img: '😖'
 	}];
 
-const moodOptions = [
+const moodOptions: EmojiOption[] = [
 	{
 		id: 0,
 		label: "overwhelmed",
@@ -40,17 +41,21 @@ const moodOptions = [
 		img: '🧘‍'
 	},
 	{
-		id: 2,
+		id: 3,
 		label: "high-energy",
 		img: '🏋‍'
 	},
 	{
-		id: 2,
+		id: 4,
 		label: "excited",
 		img: '🤩'
 	}];
 
-export class MoodSelectionStage extends React.Component {
+type Props = {
+	changePage: (page: Pages) => {}
+}
+
+export class MoodSelectionStage extends React.Component<Props> {
 	generateRandomTemplates = () => {
 		const {changePage} = this.props;
 		//fetch templates

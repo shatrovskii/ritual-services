@@ -42,6 +42,22 @@ export enum Mood {
 
 
 
+export declare class PatchedRitualBoard {
+  readonly id: string;
+  readonly boardKey?: string[];
+  readonly patchedRitual?: PatchedRitual;
+  constructor(init: ModelInit<PatchedRitualBoard>);
+  static copyOf(source: PatchedRitualBoard, mutator: (draft: MutableModel<PatchedRitualBoard>) => MutableModel<PatchedRitualBoard> | void): PatchedRitualBoard;
+}
+
+export declare class PatchedRitual {
+  readonly id: string;
+  readonly name?: string[];
+  readonly stage?: StageType[] | keyof typeof StageType;
+  constructor(init: ModelInit<PatchedRitual>);
+  static copyOf(source: PatchedRitual, mutator: (draft: MutableModel<PatchedRitual>) => MutableModel<PatchedRitual> | void): PatchedRitual;
+}
+
 export declare class RetroBoard {
   readonly id: string;
   readonly boardKey: string;

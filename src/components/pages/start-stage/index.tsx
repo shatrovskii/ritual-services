@@ -1,6 +1,6 @@
 import * as React from 'react'
-import {SidebarLayout} from '../../layout'
-import {Pages} from '../pages-container/constants'
+import {SidebarLayout} from 'components/layout'
+import {Pages} from 'components/pages-container/constants'
 
 import classNames from 'classnames'
 import 'mirotone/dist/styles.css'

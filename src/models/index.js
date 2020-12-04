@@ -42,9 +42,11 @@ const Mood = {
   "EXCITED": "EXCITED"
 };
 
-const { RetroBoard, Ritual, ParticipantPreferences, Idea, Vote, ActionItem, PersonRitual, Person, Template, TemplateStage, Stage, TemplateIdeaType, IdeaType, TemplateArea } = initSchema(schema);
+const { PatchedRitualBoard, PatchedRitual, RetroBoard, Ritual, ParticipantPreferences, Idea, Vote, ActionItem, PersonRitual, Person, Template, TemplateStage, Stage, TemplateIdeaType, IdeaType, TemplateArea } = initSchema(schema);
 
 export {
+  PatchedRitualBoard,
+  PatchedRitual,
   RetroBoard,
   Ritual,
   ParticipantPreferences,
