@@ -7,8 +7,16 @@ const initialState = {
   user: {
     id: null,
     role: null,
-    mood: null,
-    ease: null
+    mood: {
+      id: 3,
+      label: "high-energy",
+      img: "🏋‍"
+    },
+    ease: {
+      id: 0,
+      label: "easy",
+      img: "😏"
+    }
   },
   ritual: {
     name: null,
@@ -90,9 +98,13 @@ export default (state = initialState, action) => {
     case "START_RITUAL":
       return { ...state, ritual: { name: action.payload } };
     case "SET_USER_RETRO_HARDNESS":
-      return { ...state, user: { ease: action.payload } };
+      return { ...state,
+        user: {
+        ...state.user,
+          ease: action.payload
+      }};
     case "SET_USER_MOOD":
-      return { ...state, user: { mood: action.payload } };
+      return { ...state, user: { ...state.user, mood: action.payload } };
 
     case "SET_RITUAL_TIME":
       return { ...state, ritual: { time: action.payload } };

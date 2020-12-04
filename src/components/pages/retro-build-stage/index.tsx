@@ -6,12 +6,13 @@ import 'mirotone/dist/styles.css'
 import './styles.less'
 import {Pages} from 'components/pages-container/constants'
 import emoji from 'react-easy-emoji'
-import {RitualState} from 'store/reducers'
+import {RitualState, UserState} from 'store/reducers'
 import FrameworkCard, {FrameworkCardType} from 'components/framework-card'
 
 type Props = {
 	changePage: (page: Pages) => {};
 	ritual: RitualState;
+	user: UserState;
 };
 
 function addTemplate() {
@@ -43,11 +44,11 @@ class RetroBuildStage extends React.Component<Props> {
 				<p className="p-large">
           	<span className="column-50">
         		<span>Ease:</span>
-        	  	<span>{emoji(`${this.props.ritual.ease?.img}`)}</span>
+        	  	<span>{emoji(`${this.props.ritual.ease?.img || this.props.user?.ease?.img}`)}</span>
           	</span>
 					<span className="column-50">
         		<span>Mood:</span>
-        		<span>{emoji(`${this.props.ritual.mood?.img}`)}</span>
+        		<span>{emoji(`${this.props.ritual.mood?.img || this.props.user?.mood?.img}`)}</span>
         	</span>
 				</p>
 				<p className="framework-list">
@@ -68,7 +69,8 @@ class RetroBuildStage extends React.Component<Props> {
 
 const mapStateToProps = state => {
 	return {
-		ritual: state.ritual
+		ritual: state.ritual,
+		user: state.user
 	}
 }
 

@@ -19,7 +19,7 @@ export const EmotionalScale = ({
 
     const handleClick = (item) => {
         setSelectedItemId(item.id)
-        onClick && onClick(item.label)
+        onClick && onClick(item)
     }
 
     const isActive = (id: number): boolean => selectedItemId === id
