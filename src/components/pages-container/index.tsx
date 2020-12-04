@@ -6,7 +6,7 @@ import StartStage from 'components/pages/start-stage'
 import {ParticipantsCountStage} from 'components/pages/participants-count-stage'
 import {Pages} from 'components/pages-container/constants'
 import {MoodSelectionStage} from 'components/pages/mood-selection-stage'
-import {RetroBuildStage} from 'components/pages/retro-build-stage'
+import RetroBuildStage from 'components/pages/retro-build-stage'
 
 class PagesContainer extends React.Component {
 	changePage = (value) => {
