@@ -7,12 +7,24 @@ import EmojiOption from "./emoji-option";
 
 export const EmotionalScale = ({
   options = [],
-  columnAlign = false
+  columnAlign = false,
+  onClick
 }: {
   options: EmojiOption[];
   columnAlign?: boolean;
+  onClick?: (string) => void,
 }) => {
-  return (
+
+    const [selectedItemId, setSelectedItemId] = React.useState(options[0].id);
+
+    const handleClick = (item) => {
+        setSelectedItemId(item.id)
+        onClick && onClick(item.label)
+    }
+
+    const isActive = (id: number): boolean => selectedItemId === id
+
+    return (
     <div
       className={classNames({
         "emotional-scale": true,
@@ -20,10 +32,13 @@ export const EmotionalScale = ({
       })}
     >
       {options.map(option => (
-        <div className="emotional-scale__item">
-          {emoji(`${option.img}`)}
-          <div className="emotional-scale__item-label">{option.label}</div>
-        </div>
+          <div onClick={() => handleClick(option)}>
+            <div className={classNames({'emotional-scale__item': true,
+                'emotional-scale__item--active': isActive(option.id)})}>
+              {emoji(`${option.img}`)}
+              <div className="emotional-scale__item-label">{option.label}</div>
+            </div>
+          </div>
       ))}
     </div>
   );

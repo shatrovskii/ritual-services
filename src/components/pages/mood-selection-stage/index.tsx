@@ -4,8 +4,8 @@ import {Pages} from 'components/pages-container/constants'
 import classNames from 'classnames'
 import 'mirotone/dist/styles.css'
 import './styles.less'
-import {EmotionalScale} from '../../emotional-scale'
 import EmojiOption from 'components/emotional-scale/emoji-option'
+import {EmotionalScale} from 'components/emotional-scale'
 
 const hardnessOptions: EmojiOption[] = [
 	{
@@ -69,7 +69,6 @@ export class MoodSelectionStage extends React.Component<Props> {
 	}
 
 	render() {
-		console.log('123')
 		return (
 			<SidebarLayout>
 				<h1 className="h2">New retrospective</h1>

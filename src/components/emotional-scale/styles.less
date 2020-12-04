@@ -10,9 +10,19 @@
 
   &__item {
     display: flex;
+    height: 36px;
     align-items: center;
     cursor: pointer;
     margin: 8px;
+
+    &--active {
+      position: relative;
+      color: var(--blue900);
+      box-sizing: border-box;
+      border-bottom: 5px solid var(--blue900);
+      left: 0;
+      transition:all 50ms ease-in-out;
+    }
   }
 
   &__item-label {
