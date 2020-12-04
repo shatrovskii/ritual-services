@@ -25,9 +25,10 @@
     "webpack-cli": "3.3.12"
   },
   "dependencies": {
-    "aws-amplify": "^3.3.11",
     "@aws-amplify/datastore": "^2.9.0",
+    "aws-amplify": "^3.3.11",
     "classnames": "^2.2.6",
+    "firebase": "^8.1.2",
     "mirotone": "^1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -35,6 +36,7 @@
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "uuid": "^8.3.1",
     "webpack-dev-server": "^3.11.0"
   }
 }
