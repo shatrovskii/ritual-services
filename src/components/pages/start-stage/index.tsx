@@ -5,8 +5,8 @@ import {Pages} from 'components/pages-container/constants'
 import classNames from 'classnames'
 import 'mirotone/dist/styles.css'
 import './styles.less'
-import {initBoard} from "../../../datastorage/datastore";
-import {Ritual} from "../../../datastorage";
+import {initBoard, updateBoard} from "../../../datastorage/datastore";
+import {Person, RetroBoard, StageType} from "../../../datastorage";
 
 type Props = {
     changePage: (page: Pages) => {};
@@ -14,11 +14,21 @@ type Props = {
 
 export class StartStage extends React.Component<Props> {
     async startRetro() {
-        let ritual: Ritual = {
-
-        }
         this.props.changePage(Pages.PARTICIPANTS_COUNT_STAGE)
-        await initBoard()
+
+        const initiator: Person = {
+            miroUserId: await miro.currentUser.getId()
+        }
+        const board: RetroBoard = {
+            activeRitual: {
+                stage: StageType.RETRO_BUILD,
+                name: 'Retrospective',
+                date:  new Date().toDateString(),
+                initiator: initiator,
+                participants: [initiator]
+            }
+        }
+        await updateBoard(board)
     }
 
     render() {
