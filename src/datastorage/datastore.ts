@@ -1,7 +1,7 @@
 import firebase from "firebase";
 import { v4 as uuidv4 } from 'uuid';
 
-import {RetroBoard, Template} from "datastorage/index";
+import {RetroBoard, Template} from "datastorage/models";
 
 export async function initBoard(): Promise<RetroBoard> {
     const db = firebase.firestore()
